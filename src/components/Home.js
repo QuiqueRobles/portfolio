@@ -1,12 +1,19 @@
 import React from 'react';
+import Hero from './Hero';
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
 
-function Home() {
+
+function App() {
   return (
-    <div className="home">
-      <h1>Bienvenido a mi Portafolio</h1>
-      <p>Soy Enrique Robles, Ingeniero en Telecomunicaciones y Ciencias de la Computación.</p>
+    <div className="App">
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
     </div>
   );
 }
 
-export default Home;
+export default App;

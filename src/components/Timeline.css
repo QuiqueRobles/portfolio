@@ -1,0 +1,133 @@
+.timeline-container {
+  padding: 50px 20px;
+  background-color: #0e0b16;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.timeline-title {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color:white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.timeline {
+  position: relative;
+  max-width: 760px;
+  margin: 5 left;
+  padding: 0 20px;
+}
+
+.timeline-item {
+  padding: 30px 0;
+  position: left;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.03);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #39ff14;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.timeline-item:hover::before {
+  background-color: #39ff14;
+}
+
+.timeline-item:last-child::before {
+  height: 50%;
+  top: 0;
+}
+
+.timeline-date {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #39ff14;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0px 4px 10px rgba(57, 255, 20, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.timeline-date:hover {
+  background-color: #28cc0e;
+}
+
+.timeline-content {
+  padding: 20px 40px;
+    width: 80%;
+  background-color: #1b1b2f;
+  border-radius: 10px;
+  text-align: left;
+  margin-left: calc(50% + 40px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  background-color: #29293b;
+  transform: translateX(10px);
+}
+
+.timeline-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color:white;
+}
+
+.timeline-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c4c4c4;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-content {
+    margin-left: calc(50% + 20px);
+    padding: 15px 30px;
+  }
+
+  .timeline-item::before {
+    left: 40px;
+  }
+
+  .timeline-date {
+    left: 40px;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-content {
+    margin-left: 0;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .timeline-item::before {
+    left: 0;
+  }
+
+  .timeline-date {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+  }
+}

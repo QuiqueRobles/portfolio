@@ -12,6 +12,31 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 10%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
 
 .App-header {
   background-color: #282c34;
@@ -23,7 +48,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.main-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 .App-link {
   color: #61dafb;
 }

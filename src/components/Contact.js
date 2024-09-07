@@ -1,11 +1,16 @@
 import React from 'react';
+import './Contact.css';
 
 function Contact() {
   return (
     <div className="contact">
-      <h2>Contacto</h2>
-      <p>Email: qroblesuriel@gmail.com</p>
-      <p>Teléfono: +34 608 887 536</p>
+      <h2>Contáctame</h2>
+      <form>
+        <input type="text" placeholder="Tu Nombre" />
+        <input type="email" placeholder="Tu Email" />
+        <textarea placeholder="Tu Mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
     </div>
   );
 }

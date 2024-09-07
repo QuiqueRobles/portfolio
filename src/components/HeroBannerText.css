@@ -1,0 +1,82 @@
+/* Glowing Effect with White Glow and Dark Outline */
+.glowing {
+    font-size: 4rem;
+    /* Letras grandes */
+    font-weight: 700;
+    /* Negrita para mayor visibilidad */
+    font-family: 'Lato', sans-serif;
+    /* Fuente profesional */
+
+    /* Color blanco puro */
+    color: #ffffff;
+
+    margin: 0;
+    padding: 20px 0;
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* Glowing blanco nítido con borde oscuro */
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 1),
+        /* Glowing blanco nítido */
+        -1px -1px 1px rgba(0, 0, 0, 0.8),
+        /* Borde oscuro sutil para contraste */
+        1px 1px 1px rgba(0, 0, 0, 0.8);
+    /* Borde oscuro en ambos lados */
+}
+
+/* Glowing Animation */
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 5px rgba(255, 255, 255, 1),
+            /* Glowing blanco nítido */
+            -1px -1px 1px rgba(0, 0, 0, 0.8),
+            /* Borde oscuro sutil */
+            1px 1px 1px rgba(0, 0, 0, 0.8);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px rgba(255, 255, 255, 1),
+            /* Glowing blanco */
+            -1px -1px 1px rgba(0, 0, 0, 0.8),
+            /* Borde oscuro sutil */
+            1px 1px 1px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Cursor Animation */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 4rem;
+    /* Match the font size of the text */
+    background-color: #ffffff;
+    /* Cursor blanco */
+    margin-left: 5px;
+    animation: blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .glowing {
+        font-size: 2.5rem;
+    }
+
+    .cursor {
+        height: 2.5rem;
+    }
+}

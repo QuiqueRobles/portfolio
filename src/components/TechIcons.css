@@ -1,0 +1,43 @@
+.tech-icons-container {
+    overflow: hidden;
+    background-color: #0e0b16;
+    padding: 50px 0;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: scroll 15s linear infinite;
+}
+
+.tech-icons:hover {
+    animation-play-state: paused;
+    /* Pauses animation on hover */
+}
+
+.tech-icons .icon {
+    margin: 0 20px;
+    width: 80px;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons .icon img {
+    width: 100%;
+    height: auto;
+}
+
+.tech-icons .icon:hover {
+    transform: scale(1.2);
+}
+
+/* Animation keyframes */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

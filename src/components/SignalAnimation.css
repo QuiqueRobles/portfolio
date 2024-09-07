@@ -1,0 +1,51 @@
+.antenna-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* Adjust height if needed */
+}
+
+.antenna {
+    width: 150px;
+    height: auto;
+    background: none;
+    /* Ensure there's no background set */
+}
+
+.signal {
+    position: absolute;
+    /* Adjust the position of the signal relative to the antenna */
+    top: 20px;
+    /* Start by adjusting this value */
+    left: 90%;
+    /* Center it horizontally (adjust if needed) */
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #39ff14;
+    border-radius: 50%;
+    opacity: 0;
+    animation: transmit 1.5s infinite ease-in-out;
+}
+
+.signal:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.signal:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes transmit {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}

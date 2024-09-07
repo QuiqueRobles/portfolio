@@ -1,0 +1,70 @@
+/* Glowing Effect for smaller text */
+.glowing-small {
+    color: #39ff14;
+    /* Verde espacial */
+    font-size: 1.3rem;
+    /* Tamaño de las letras más pequeñas */
+    font-weight: bold;
+    text-shadow:
+        0 0 8px #39ff14,
+        0 0 16px #39ff14,
+        0 0 24px #39ff14,
+        0 0 32px #39ff14;
+    margin: 0;
+    padding: 20px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: glow-small 1.5s ease-in-out infinite alternate;
+}
+
+/* Glowing Animation */
+@keyframes glow-small {
+    from {
+        text-shadow:
+            0 0 8px #39ff14,
+            0 0 16px #39ff14,
+            0 0 24px #39ff14,
+            0 0 32px #39ff14;
+    }
+
+    to {
+        text-shadow:
+            0 0 16px #39ff14,
+            0 0 32px #39ff14,
+            0 0 48px #39ff14,
+            0 0 64px #39ff14;
+    }
+}
+
+/* Cursor Animation for smaller text */
+.cursor-small {
+    display: inline-block;
+    width: 3px;
+    height: 2rem;
+    background-color: #39ff14;
+    margin-left: 5px;
+    animation: blink-small 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink-small {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .glowing-small {
+        font-size: 1.5rem;
+    }
+
+    .cursor-small {
+        height: 1.5rem;
+    }
+}

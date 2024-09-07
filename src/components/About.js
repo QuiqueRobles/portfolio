@@ -1,20 +1,20 @@
 import React from 'react';
+import './About.css';
+import ProfileImageBanner from './ProfileImageBanner';
+import TechIcons from './TechIcons';
+import Timeline from './Timeline';
+import LanguageSkills from './LanguageSkills';
 
 function About() {
   return (
     <div className="about">
       <h2>Sobre Mí</h2>
-      <p>Soy Enrique Robles, actualmente cursando un Máster en Ingeniería de Telecomunicaciones en Politecnico di Milano.</p>
-      <h3>Formación</h3>
-      <ul>
-        <li>Ingeniería de Telecomunicaciones, Universidad San Pablo CEU</li>
-        <li>Ingeniería en Ciencias de la Computación, Universidad San Pablo CEU y Politecnico di Milano</li>
-      </ul>
-      <h3>Habilidades</h3>
-      <ul>
-        <li>Python, Java, C, SQL, Linux, HTML, CSS, JavaScript</li>
-        <li>Experiencia en proyectos espaciales (GMV y Polispace)</li>
-      </ul>
+      <ProfileImageBanner/>
+      <br></br><br></br><br></br>
+      <p>Soy un apasionado de la tecnología y las telecomunicaciones, con una inclinación hacia el desarrollo de soluciones innovadoras...</p>
+       <TechIcons />
+      <Timeline/>
+      <LanguageSkills/>
     </div>
   );
 }

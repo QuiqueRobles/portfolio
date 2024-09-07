@@ -1,0 +1,31 @@
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #0e0b16;
+    color: white;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tech-icons .icon {
+    width: 80px;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons .icon:hover {
+    transform: scale(1.2);
+}

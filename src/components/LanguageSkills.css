@@ -1,0 +1,123 @@
+.language-skills-container {
+  padding: 50px 20px;
+  background-color: #0e0b16;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.language-skills-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #39ff14;
+}
+
+.language-skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.language-skill {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.language-skill:hover {
+  transform: scale(1.05);
+}
+
+.language-bar {
+  background-color: #1b1b2f;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  transition: width 0.5s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.language-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.language-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  
+}
+
+.language-level {
+  font-size: 1rem;
+  color: #c4c4c4;
+}
+
+.language-tooltip {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #29293b;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.language-skill:hover .language-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+@media screen and (max-width: 768px) {
+  .language-bar {
+    height: 30px;
+    padding: 0 15px;
+  }
+
+  .language-name {
+    font-size: 1rem;
+  }
+
+  .language-level {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .language-skills-title {
+    font-size: 2rem;
+  }
+
+  .language-bar {
+    height: 25px;
+    padding: 0 10px;
+  }
+
+  .language-name {
+    font-size: 0.9rem;
+  }
+
+  .language-level {
+    font-size: 0.8rem;
+  }
+
+  .language-tooltip {
+    top: -50px;
+    padding: 8px 16px;
+  }
+}
