@@ -1,0 +1,79 @@
+/* Section for the location component */
+.location-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #0E0B16;
+}
+
+/* "Based in:" Header */
+.location-header {
+    font-size: 28px;
+    color: #ffff;
+    /* Your theme's green color */
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Container for the cities */
+.location-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Individual City Container */
+.city-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.city-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00FF66;
+    /* Green glow */
+}
+
+/* City Icons */
+.city-icon {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* City Names */
+.city-name {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #ffff;
+    /* Green color for city names */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* On hover, icon slightly enlarges */
+.city-container:hover .city-icon {
+    transform: scale(1.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: column;
+    }
+
+    .city-container {
+        margin-bottom: 20px;
+    }
+}

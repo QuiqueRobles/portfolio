@@ -3,11 +3,15 @@
     background-color: #1e1b2e;
     color: white;
     text-align: center;
+    
 }
 
 .projects h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-grid {
@@ -17,13 +21,84 @@
 }
 
 .project-card {
-    background-color: #2b2a40;
+    background-color: #212030;
     padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.05);
     background-color: #3b3a5a;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: white;
+    position: relative;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #c4c4c4;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.project-card button {
+    padding: 10px 20px;
+    background-color: #39ff14;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card button:hover {
+    background-color: #28cc0e;
+    transform: translateY(-3px);
+}
+
+.project-icon {
+    font-size: 3rem;
+    color: #39ff14;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    transform: rotate(20deg);
+}
+
+.project-card:hover h3,
+.project-card:hover p {
+    transition: transform 0.3s ease;
+}
+
+.globe-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    /* Adjust the height as needed */
+}
+
+.globe-container canvas {
+    width: 400px;
+    /* Fixed width */
+    height: 400px;
+    /* Fixed height */
+    border-radius: 50%;
+    /* Makes the canvas circular */
+    pointer-events: none;
+    /* Disable user interaction */
 }

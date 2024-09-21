@@ -45,15 +45,15 @@ function Hero() {
           <div className="highlights">
             <div className="highlight">
               <FaSatelliteDish size={40} />
-              <p>Telecommunications Expert</p>
+              <p>Telecommunications Enthusiast</p>
             </div>
             <div className="highlight">
               <FaCode size={40} />
-              <p>Full-Stack Developer</p>
+              <p>Coder</p>
             </div>
             <div className="highlight">
               <FaRocket size={40} />
-              <p>Space Communications Enthusiast</p>
+              <p>Space Enthusiast</p>
             </div>
           </div>
           <a href="#contact" className="cta-button">Contact Me</a>

@@ -1,66 +1,68 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Timeline.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faSatellite, faShieldAlt, faUniversity } from '@fortawesome/free-solid-svg-icons';
 
-function Timeline() {
+const Timeline = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
+
+  const events = [
+    {
+      year: "2024-2026",
+      title: "Telecommunications Engineering Master of Science",
+      description: "Pursuing a Master's degree focused on advanced telecommunications systems and digital communications at Politecnico di Milano.",
+      icon: "🎓",
+    },
+    {
+      year: "2023-2024",
+      title: "CubeSat TMTC Member at PoliSpace",
+      description: "Involved in the Telemetry and Telecommand (TMTC) subsystem development for CubeSat missions, ensuring communication reliability for satellite systems.",
+      icon: "🛰️",
+    },
+    {
+      year: "2023",
+      title: "Cryptography and Cybersecurity Engineer at GMV",
+      description: "Worked on cryptographic models and cybersecurity solutions for space communication systems, contributing to secure data transmission.",
+      icon: "🔐",
+    },
+    {
+      year: "2019-2023",
+      title: "Telecommunications Engineering",
+      description: "Graduated with a Bachelor's in Telecommunications Engineering at Universidad CEU San Pablo, specializing in wireless communications and networks.",
+      icon: "🎓",
+    },
+    {
+      year: "2019-2024",
+      title: "Computer Science Engineering",
+      description: "Pursuing a dual degree in Computer Science Engineering, focusing on software development, artificial intelligence, and data structures.",
+      icon: "💻",
+    },
+  ];
+
   return (
     <div className="timeline-container">
       <h2 className="timeline-title">Enrique Robles - Professional & Academic Journey</h2>
       <div className="timeline">
-        <br></br>
-        <div className="timeline-item">
-          <div className="timeline-date">2024-2026</div>
-          <div className="timeline-content">
-            <h3>
-              <FontAwesomeIcon icon={faGraduationCap} /> Telecommunications Engineering Master of Science
-            </h3>
-            <p>Currently pursuing a Master's degree in Telecommunications Engineering at Politecnico di Milano.</p>
+        {events.map((event, index) => (
+          <div
+            key={index}
+            className="timeline-item"
+            data-aos="fade-up"
+          >
+            <div className="timeline-icon">{event.icon}</div>
+            <div className="timeline-content">
+              <div className="timeline-line"></div>
+              <div className="year">{event.year}</div>
+              <h3 className="title">{event.title}</h3>
+              <p className="description">{event.description}</p>
+            </div>
           </div>
-        </div>
-
-        <div className="timeline-item">
-          <div className="timeline-date">2023</div>
-          <div className="timeline-content">
-            <h3>
-              <FontAwesomeIcon icon={faSatellite} /> CubeSat TMTC Member at PoliSpace
-            </h3>
-            <p>Working as a CubeSat Telemetry and Telecommand (TMTC) Team Member and Software Engineer.</p>
-          </div>
-        </div>
-
-        <div className="timeline-item">
-          <div className="timeline-date">2023</div>
-          <div className="timeline-content">
-            <h3>
-              <FontAwesomeIcon icon={faShieldAlt} /> Cryptography and Cybersecurity Engineer at GMV
-            </h3>
-            <p>Developed a cryptographic module for post-quantum cryptographic algorithms for the ESA Galileo project during an internship.</p>
-          </div>
-        </div>
-
-        <div className="timeline-item">
-          <div className="timeline-date">2019-2024</div>
-          <div className="timeline-content">
-            <h3>
-              <FontAwesomeIcon icon={faUniversity} /> Computer Science Engineering
-            </h3>
-            <p>Completing a dual degree in Computer Science Engineering at Politecnico di Milano and Universidad San Pablo CEU, Madrid.</p>
-          </div>
-        </div>
-
-        <div className="timeline-item">
-          <div className="timeline-date">2019-2023</div>
-          <div className="timeline-content">
-            <h3>
-              <FontAwesomeIcon icon={faGraduationCap} /> Telecommunications Engineering
-            </h3>
-            <p>Completed a Bachelor's degree in Telecommunications Engineering at Universidad San Pablo CEU, Madrid, graduating with a top grade of 7.938/10.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default Timeline;

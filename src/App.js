@@ -6,6 +6,8 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader'; 
+import Footer from './components/Footer';
+import SatelliteProject from './components/SatelliteProject'
 import './App.css';
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
   function createStar() {
     const star = document.createElement('div');
     star.className = 'star';
-    const size = Math.random() * 3;
+    const size = Math.random() * 4;
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.left = `${Math.random() * window.innerWidth}px`;
@@ -41,8 +43,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/satellite-project" element={<SatelliteProject />} />
           </Routes>
         </main>
+        <Footer/>
       </div>
     </Router>
   );
