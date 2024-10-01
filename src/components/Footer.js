@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 
@@ -78,10 +78,10 @@ function Footer() {
 
         <div className="footer-social">
           <div className="social-icons">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/enrique-robles-uriel/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            <a href="https://github.com/QuiqueRobles" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            <a href="mailto:youremail@example.com"><FaEnvelope /></a>
+            <a href="https://www.instagram.com/quique_robles/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           </div>
         </div>
       </div>

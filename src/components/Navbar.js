@@ -25,6 +25,10 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, [location.pathname]);
+
 
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
@@ -34,16 +38,16 @@ const Navbar = () => {
         </Link>
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <li className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`}>
-            <Link to="/" className="navbar-link" onClick={toggleMobileMenu}>.Inicio()</Link>
+            <Link to="/" className="navbar-link" onClick={toggleMobileMenu}>.Main()</Link>
           </li>
           <li className={`navbar-item ${location.pathname === '/about' ? 'active' : ''}`}>
-            <Link to="/about" className="navbar-link" onClick={toggleMobileMenu}>.Sobre Mí()</Link>
+            <Link to="/about" className="navbar-link" onClick={toggleMobileMenu}>.AboutMe()</Link>
           </li>
           <li className={`navbar-item ${location.pathname === '/projects' ? 'active' : ''}`}>
-            <Link to="/projects" className="navbar-link" onClick={toggleMobileMenu}>.Proyectos()</Link>
+            <Link to="/projects" className="navbar-link" onClick={toggleMobileMenu}>.Projects()</Link>
           </li>
           <li className={`navbar-item ${location.pathname === '/contact' ? 'active' : ''}`}>
-            <Link to="/contact" className="navbar-link" onClick={toggleMobileMenu}>.Contacto()</Link>
+            <Link to="/contact" className="navbar-link" onClick={toggleMobileMenu}>.Contact()</Link>
           </li>
         </ul>
         <div className="navbar-hamburger" onClick={toggleMobileMenu}>

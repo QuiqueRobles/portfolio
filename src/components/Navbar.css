@@ -39,7 +39,7 @@
 
 .navbar-logo i {
     margin-left: 10px;
-    color: #f4a261;
+    color: #39ff14;
 }
 
 .navbar-menu {
@@ -62,12 +62,12 @@
 }
 
 .navbar-link:hover {
-    color: #f4a261;
+    color: #39ff14;
     transform: scale(1.05);
 }
 
 .navbar-item.active .navbar-link {
-    color: #f4a261;
+    color: #39ff14;
     font-weight: 700;
 }
 

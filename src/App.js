@@ -8,12 +8,34 @@ import Navbar from './components/Navbar';
 import Loader from './components/Loader'; 
 import Footer from './components/Footer';
 import SatelliteProject from './components/SatelliteProject'
+import GMVProject from "./components/GMVProject"
+
+
 import './App.css';
 
 function App() {
   
   
+  useEffect(() => {
+    const handleMouseClick = (e) => {
+      const wave = document.createElement('div');
+      wave.className = 'wave';
+      wave.style.left = `${e.pageX - 10}px`;
+      wave.style.top = `${e.pageY - 10}px`;
+      document.body.appendChild(wave);
 
+      setTimeout(() => {
+        wave.remove();
+      }, 600);
+    };
+
+    document.addEventListener('click', handleMouseClick);
+
+    return () => {
+      document.removeEventListener('click', handleMouseClick);
+    };
+  }, []);
+  
   useEffect(() => {
   function createStar() {
     const star = document.createElement('div');
@@ -44,6 +66,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/satellite-project" element={<SatelliteProject />} />
+            <Route path="/gmv-project" element={<GMVProject />} />
           </Routes>
         </main>
         <Footer/>

@@ -8,25 +8,7 @@ import SignalAnimation from './SignalAnimation';
 
 
 function Hero() {
-  useEffect(() => {
-    const handleMouseClick = (e) => {
-      const wave = document.createElement('div');
-      wave.className = 'wave';
-      wave.style.left = `${e.pageX - 10}px`;
-      wave.style.top = `${e.pageY - 10}px`;
-      document.body.appendChild(wave);
-
-      setTimeout(() => {
-        wave.remove();
-      }, 600);
-    };
-
-    document.addEventListener('click', handleMouseClick);
-
-    return () => {
-      document.removeEventListener('click', handleMouseClick);
-    };
-  }, []);
+  
   
   
 
@@ -38,10 +20,10 @@ function Hero() {
         <HeroBannerText text="Quique Robles"/> 
         
         <br></br>
-        <HeroBannerTextSmall texts={["Ingeniero de Telecomunicaciones", "Ingeniero Informático", "Desarrollador Full-Stack"]} />
+        <HeroBannerTextSmall texts={["Telecommunications Engineer", "Computer Science Engineer", "Passionate about technology and space", "Student of Politecnico di Milano - Master of Science"]} />
 
         <div className="hero-text">
-          <p className="tagline">Innovating at the intersection of Technology and Space</p>
+          <p className="tagline">Explore more about me and this amazing webpage</p>
           <div className="highlights">
             <div className="highlight">
               <FaSatelliteDish size={40} />
