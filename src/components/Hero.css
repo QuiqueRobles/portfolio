@@ -9,8 +9,6 @@
     background: linear-gradient(180deg, #00031a, #013664);
 }
 
-
-
 .overlay {
     position: absolute;
     top: 0;
@@ -20,7 +18,6 @@
     background: rgba(0, 0, 0, 0.4);
     /* Dark overlay for better text contrast */
 }
-
 .content {
     display: flex;
     flex-direction: column;

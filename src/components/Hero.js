@@ -6,7 +6,6 @@ import { FaSatelliteDish, FaCode, FaRocket } from 'react-icons/fa';  // Example 
 import HeroOrbit from './HeroOrbit';
 import SignalAnimation from './SignalAnimation';
 import HeroIcons from './HeroIcons';
-
 function Hero() {
   
   

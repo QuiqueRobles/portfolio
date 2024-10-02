@@ -25,9 +25,9 @@ function ProfileImageBanner() {
         <h3>Enrique Robles</h3>
         <p>
           ¡Bienvenido! <br />
-          Soy Enrique Robles, desarrollador Full-Stack con un profundo interés en la fusión de la tecnología y las comunicaciones espaciales.
-          Con una sólida formación en Ingeniería de Telecomunicaciones e Ingeniería Informática, mi pasión es crear soluciones innovadoras que conecten el mundo con el espacio.
-          Explora más sobre mí y descubre cómo podemos impulsar juntos la tecnología hacia nuevas fronteras.
+          Soy Enrique Robles, soy una persona con gran curiosidad en la tecnología y las comunicaciones espaciales.
+          Con una sólida formación en Ingeniería de Telecomunicaciones e Ingeniería Informática, mi pasión es conocer cada día más sobre nuevos dispositivos y técnicas para avanzar como sociedad.
+          Explora más sobre mí y descubre cómo intento impulsar juntos la tecnología hacia nuevas fronteras.
         </p>
       </div>
     </div>

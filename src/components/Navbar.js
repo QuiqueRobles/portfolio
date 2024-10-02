@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          QRU <i className="fas fa-rocket"></i>
+          QRU <i className="fas fa-satellite-dish"></i>
         </Link>
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <li className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`}>
