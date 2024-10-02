@@ -1,0 +1,46 @@
+.highlights-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+.highlight.active {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.highlight-icon {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.highlight.active .highlight-icon {
+    color: #39ff14;
+}
+
+.highlight p {
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .highlight {
+            min-width: 80px;
+            max-width: 160px;
+        }
+}

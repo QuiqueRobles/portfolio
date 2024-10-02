@@ -61,7 +61,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .glowing-small {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .cursor-small {
