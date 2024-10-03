@@ -20,7 +20,7 @@ function Hero() {
         <HeroBannerText text="Quique Robles"/> 
         
         <br></br>
-        <HeroBannerTextSmall texts={["Telecommunications Engineer", "Computer Science Engineer", "Passionate about technology and space", "Student of Politecnico di Milano - Master of Science"]} />
+        <HeroBannerTextSmall texts={["Telecommunications Engineer", "Computer Science Engineer", "Passionate about technology and space", "MSc Student at Politecnico di Milano"]} />
         <br></br><br></br><br></br>
         <div className="hero-text">
           <HeroIcons/>

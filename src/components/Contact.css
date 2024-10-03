@@ -10,9 +10,11 @@
     margin-bottom: 20px;
 }
 
+/* Ajustes para hacer el contenedor más responsivo */
 .contact form {
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .contact input,
@@ -22,6 +24,20 @@
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
+    background-color: #1a1a2e;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: #c5c5c5;
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 .contact button {
@@ -36,4 +52,48 @@
 
 .contact button:hover {
     background-color: #565482;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .contact h2 {
+        font-size: 2rem;
+        /* Ajuste del tamaño del título */
+    }
+
+    .contact input,
+    .contact textarea {
+        padding: 12px;
+        /* Ajustar padding en móviles */
+        font-size: 0.9rem;
+    }
+
+    .contact button {
+        padding: 12px 25px;
+        /* Botón más pequeño en móviles */
+    }
+
+    .contact {
+        padding: 40px 15px;
+        /* Reducir padding en móviles */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .contact h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 0.85rem;
+        /* Tamaño de texto más pequeño */
+        padding: 10px;
+    }
+
+    .contact button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }

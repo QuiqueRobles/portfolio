@@ -10,10 +10,10 @@ import Location from './Location';
 function About() {
   return (
     <div className="about">
-      <h2>Sobre Mí</h2>
+      <h2>About Me</h2>
       <ProfileImageBanner/>
       <br></br><br></br><br></br>
-      <p>Soy un apasionado de la tecnología y las telecomunicaciones, con una inclinación hacia el desarrollo de soluciones innovadoras...</p>
+      <p>I am passionate about technology and telecommunications, with a penchant for developing innovative solutions...</p>
        <TechIcons />
       <Timeline/>
       <Location/>

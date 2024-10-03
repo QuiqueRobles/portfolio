@@ -24,10 +24,10 @@ function ProfileImageBanner() {
       <div className="profile-description">
         <h3>Enrique Robles</h3>
         <p>
-          ¡Bienvenido! <br />
-          Soy Enrique Robles, soy una persona con gran curiosidad en la tecnología y las comunicaciones espaciales.
-          Con una sólida formación en Ingeniería de Telecomunicaciones e Ingeniería Informática, mi pasión es conocer cada día más sobre nuevos dispositivos y técnicas para avanzar como sociedad.
-          Explora más sobre mí y descubre cómo intento impulsar juntos la tecnología hacia nuevas fronteras.
+          Welcome to my site! <br />
+          I am Enrique Robles, I am a person with great curiosity in technology and space communications.
+          With a solid background in Telecommunications Engineering and Computer Engineering, my passion is to learn more every day about new devices and techniques to advance as a society.
+          Explore more about me and discover how I try to push technology together towards new frontiers.
         </p>
       </div>
     </div>
