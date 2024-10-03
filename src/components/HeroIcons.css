@@ -39,8 +39,15 @@
 }
 
 @media (max-width: 768px) {
-    .highlight {
-            min-width: 80px;
-            max-width: 160px;
+    
+        .highlights-container {
+            
+            gap: 1rem;
         }
+                .highlight p {
+                    margin-top: 0.5rem;
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+                
 }

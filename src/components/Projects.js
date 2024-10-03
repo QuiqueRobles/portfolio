@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 import { FaSatelliteDish, FaLock, FaCode } from 'react-icons/fa';
 
@@ -15,7 +16,9 @@ function Projects() {
           <p>
             Este proyecto final de ingeniería en telecomunicaciones se centra en el estudio, diseño y fabricación de antenas para la recepción de imágenes de satélites meteorológicos. Se desarrollaron dos antenas: un V-dipolo y una Turnstile, utilizando el software comercial CST Studio. El proyecto incluye la fabricación de las antenas, la recepción de señales mediante un SDR, y la decodificación de imágenes transmitidas por satélites NOAA.
           </p>
-          <button onClick={() => window.location.href = '/satellite-project'}>Ver Proyecto</button>
+          <Link to="/satellite-project">
+          <button >Ver Proyecto</button>
+          </Link>
     
         </div>
 
@@ -27,7 +30,9 @@ function Projects() {
           <p>
             Durante mi pasantía en GMV, participé en el desarrollo de un módulo criptográfico para el proyecto Galileo de la ESA, implementando algoritmos de criptografía post-cuántica. El módulo asegura la integridad y confidencialidad de las comunicaciones en satélites europeos.
           </p>
-          <button onClick={() => window.location.href = '/gmv-project'}>Ver Proyecto</button>
+          <Link to="/gmv-project">
+          <button >Ver Proyecto</button>
+          </Link>
         </div>
 
         <div className="project-card">
@@ -38,8 +43,11 @@ function Projects() {
           <p>
             He desarrollado páginas y aplicaciones web, trabajando para la Asociación de Griegos de Madrid GREMA (grema.org) y para Estudios Juridicos PRL (estudiojuridicoprl.es). Además he participado en diversos proyectos universitarios de desarrollo web.
           </p>
-          <button onClick={() => window.location.href('#', '_blank')}>Ver Proyecto</button>
+          <Link to="/satellite-project">
+          <button >Ver Proyecto</button>
+          </Link>
         </div>
+        
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import { FaSatelliteDish, FaCode, FaRocket } from 'react-icons/fa';
 function HeroIcons(){
     const highlights = [
             { icon: FaSatelliteDish, text: "Telecommunications" },
-            { icon: FaCode, text: "Programming" },
+            { icon: FaCode, text: "Computer Science" },
             { icon: FaRocket, text: "Space Enthusiast" }
         ];
     const [activeHighlight, setActiveHighlight] = useState(null);

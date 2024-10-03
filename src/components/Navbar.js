@@ -25,10 +25,11 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  useEffect(() => {
-  window.scrollTo(0, 0);
-}, [location.pathname]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsMobileMenuOpen(false); // Close mobile menu when changing routes
+  }, [location.pathname]);
 
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
