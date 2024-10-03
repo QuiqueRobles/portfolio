@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import './GMVProject.css';
+import './GMVProject.css'
+
 export default function GMVProject() {
   const [activeIndex, setActiveIndex] = useState(null)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -31,11 +32,11 @@ export default function GMVProject() {
     },
     {
       title: 'Cryptographic Algorithms',
-      content: 'Our module implements a suite of NIST-approved cryptographic algorithms, including AES-256 for symmetric encryption, SHA-256 for hashing, and ECDSA with the P-256 curve for digital signatures. We also developed a custom implementation of the Merkle-Damgård construction for the OSNMA-specific Tree Authentication scheme. All implementations were optimized for speed and memory efficiency, crucial for satellite systems.'
+      content: 'Our module implements a suite of cryptographic algorithms specifically designed for the OSNMA protocol. This includes symmetric encryption, hashing, and digital signature algorithms optimized for satellite systems. We developed custom implementations for the OSNMA-specific Tree Authentication scheme, ensuring both security and efficiency in the resource-constrained environment of space-based systems.'
     },
     {
       title: 'Performance Optimizations',
-      content: 'To meet the strict performance requirements of satellite systems, we employed various optimization techniques. These include loop unrolling, lookup tables for AES S-box operations, and bitsliced implementations for parallel processing. We also utilized SIMD instructions where available to accelerate vector operations. Extensive profiling and benchmarking were performed to identify and optimize critical paths in the code.'
+      content: 'To meet the strict performance requirements of satellite systems, we employed various optimization techniques. These include loop unrolling, lookup tables for common operations, and bitsliced implementations for parallel processing. We also utilized SIMD instructions where available to accelerate vector operations. Extensive profiling and benchmarking were performed to identify and optimize critical paths in the code.'
     },
     {
       title: 'Security Measures',
@@ -43,16 +44,16 @@ export default function GMVProject() {
     },
     {
       title: 'Testing and Validation',
-      content: 'Our testing suite included unit tests for individual functions, integration tests for module interactions, and system tests simulating real-world scenarios. We used fuzz testing to identify edge cases and potential vulnerabilities. The module was validated against NIST\'s Cryptographic Algorithm Validation Program (CAVP) test vectors to ensure compliance with federal standards. Additionally, we conducted formal verification of critical components using tools like Frama-C to prove the absence of runtime errors and certain security properties.'
+      content: 'Our testing suite included unit tests for individual functions, integration tests for module interactions, and system tests simulating real-world scenarios. We used fuzz testing to identify edge cases and potential vulnerabilities. The module was validated against the Common Criteria (CC) requirements to ensure compliance with international security standards. Additionally, we conducted formal verification of critical components to prove the absence of runtime errors and certain security properties.'
     }
   ]
 
   const timelineItems = [
-    { year: '2019', event: 'Project Initiation and Requirements Gathering' },
-    { year: '2020', event: 'Algorithm Design and Initial C Implementation' },
-    { year: '2021', event: 'Optimization and Security Hardening' },
-    { year: '2022', event: 'NIST Certification Process and Testing' },
-    { year: '2023', event: 'Final Integration and Deployment to Galileo Satellites' }
+    { year: '2022', event: 'Project Initiation and Requirements Gathering' },
+    { year: '2022', event: 'Algorithm Design and Initial C Implementation' },
+    { year: '2023', event: 'Optimization and Security Hardening' },
+    { year: '2023', event: 'Common Criteria Certification Process and Testing' },
+    { year: '2024', event: 'Final Integration and Deployment to Galileo Satellites' }
   ]
 
   const openModal = (content) => {
@@ -66,8 +67,6 @@ export default function GMVProject() {
 
   return (
     <div className="gmv-project">
-      
-
       <div className="gmv-project__scroll-progress">
         <motion.div 
           className="gmv-project__scroll-progress-bar" 
@@ -94,7 +93,7 @@ export default function GMVProject() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Developing a NIST-certified cryptographic module in C for the Open Service Navigation Message Authentication (OSNMA) in Galileo satellites
+              Developing a Common Criteria certified cryptographic module in C for the Open Service Navigation Message Authentication (OSNMA) in Galileo satellites
             </motion.p>
             <motion.div 
               className="gmv-project__button-container"
@@ -102,10 +101,10 @@ export default function GMVProject() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <a href="https://www.gmv.com/en-es/products-and-services/space/satellite-navigation" target="_blank" rel="noopener noreferrer" className="gmv-project__button">
+              <a href="https://www.gmv.com/ " target="_blank" rel="noopener noreferrer" className="gmv-project__button">
                 Learn More about GMV
               </a>
-              <a href="https://www.gsc-europa.eu/sites/default/files/sites/all/files/OSNMA_User_ICD_v1.1.pdf" target="_blank" rel="noopener noreferrer" className="gmv-project__button gmv-project__button--secondary">
+              <a href="https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OSNMA_SIS_ICD_v1.1.pdf" target="_blank" rel="noopener noreferrer" className="gmv-project__button gmv-project__button--secondary">
                 OSNMA Specification
               </a>
             </motion.div>
@@ -137,7 +136,7 @@ export default function GMVProject() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                Developed entirely in C, the primary objective was to create a certified module that meets the stringent standards set by the National Institute of Standards and Technology (NIST). This certification is vital for ensuring the module's reliability and security in the context of satellite navigation systems.
+                Developed entirely in C, the primary objective was to create a certified module that meets the stringent standards set by the Common Criteria (CC). This certification is vital for ensuring the module's reliability and security in the context of satellite navigation systems.
               </motion.p>
               <motion.p 
                 className="gmv-project__text"
@@ -145,7 +144,7 @@ export default function GMVProject() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
-                The C implementation allowed us to achieve the necessary performance optimizations and low-level control required for satellite systems. We leveraged advanced C features and employed various techniques to ensure both security and efficiency in the resource-constrained environment of space-based systems.
+                The project was a collaborative effort between GMV and the European Space Agency (ESA), focusing on implementing the OSNMA protocol. Our team of six young professionals, all aged 22, worked closely with experts to ensure the module supports all algorithms involved in OSNMA, providing a robust security solution for the Galileo constellation.
               </motion.p>
             </div>
           </div>
@@ -186,33 +185,6 @@ export default function GMVProject() {
           </div>
         </section>
 
-        <section className="gmv-project__timeline">
-          <div className="gmv-project__container">
-            <motion.h3 
-              className="gmv-project__section-title"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              Project Timeline
-            </motion.h3>
-            <div className="gmv-project__timeline-container">
-              {timelineItems.map((item, index) => (
-                <motion.div 
-                  key={index}
-                  className="gmv-project__timeline-item"
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="gmv-project__timeline-year">{item.year}</div>
-                  <div className="gmv-project__timeline-event">{item.event}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="gmv-project__challenges">
           <div className="gmv-project__container">
             <motion.h3 
@@ -235,19 +207,19 @@ export default function GMVProject() {
                 <button className="gmv-project__learn-more" onClick={() => openModal('Our resource optimization techniques included custom memory allocators, bit-packing for data structures, and aggressive inlining of critical functions. We also employed loop unrolling and lookup tables to reduce instruction count and improve cache utilization.')}>Learn More</button>
               </li>
               <li className="gmv-project__challenges-item">
-                <h4 className="gmv-project__challenges-title">Radiation Hardening</h4>
-                <p className="gmv-project__text">Solution: Employed redundancy techniques, error-correcting codes, and watchdog timers to mitigate the effects of single event upsets (SEUs) in the space environment.</p>
-                <button className="gmv-project__learn-more" onClick={() => openModal('Our radiation hardening approach included triple modular redundancy for critical computations, Hamming codes for error detection and correction in memory, and periodic integrity checks of the executable code and data segments.')}>Learn More</button>
+                <h4 className="gmv-project__challenges-title">OSNMA Protocol Implementation</h4>
+                <p className="gmv-project__text">Solution: Collaborated closely with ESA experts to ensure accurate implementation of all OSNMA algorithms and security features.</p>
+                <button className="gmv-project__learn-more" onClick={() => openModal('We developed custom implementations for OSNMA-specific cryptographic primitives, including the Tree Authentication scheme. Our team worked iteratively with ESA to validate the correctness and efficiency of our implementations against the OSNMA specification.')}>Learn More</button>
               </li>
               <li className="gmv-project__challenges-item">
-                <h4 className="gmv-project__challenges-title">Strict Timing Requirements</h4>
-                <p className="gmv-project__text">Solution: Developed a real-time scheduler and used interrupt-driven programming to ensure cryptographic operations meet the tight timing constraints of satellite communications.</p>
-                <button className="gmv-project__learn-more" onClick={() => openModal('We implemented a custom real-time operating system (RTOS) kernel with a fixed-priority preemptive scheduler. Critical sections were carefully managed to minimize interrupt latency, and we used hardware timers for precise timing control.')}>Learn More</button>
+                <h4 className="gmv-project__challenges-title">Common Criteria Certification</h4>
+                <p className="gmv-project__text">Solution: Implemented a rigorous documentation process, conducted thorough code reviews, and performed extensive testing to meet Common Criteria requirements.</p>
+                <button className="gmv-project__learn-more" onClick={() => openModal('Our Common Criteria certification process involved creating detailed design documents, implementing a comprehensive test suite with 100% code coverage, and undergoing multiple rounds of independent security audits. We also developed a custom static analysis tool to ensure compliance with security coding standards.')}>Learn More</button>
               </li>
               <li className="gmv-project__challenges-item">
-                <h4 className="gmv-project__challenges-title">NIST Certification Complexity</h4>
-                <p className="gmv-project__text">Solution: Implemented a rigorous documentation process, conducted thorough code reviews, and performed extensive testing to meet FIPS 140-2 requirements.</p>
-                <button className="gmv-project__learn-more" onClick={() => openModal('Our NIST certification process involved creating detailed design documents, implementing a comprehensive test suite with 100% code coverage, and undergoing multiple rounds of independent security audits. We also developed a custom static analysis tool to ensure compliance with MISRA C guidelines.')}>Learn More</button>
+                <h4 className="gmv-project__challenges-title">Team Coordination and Expertise</h4>
+                <p className="gmv-project__text">Solution: Leveraged the diverse skills of our young team while working closely with experienced mentors and ESA experts to ensure project success.</p>
+                <button className="gmv-project__learn-more" onClick={() => openModal('Our team of six 22-year-old professionals brought fresh perspectives and innovative ideas to the project. We implemented an agile development process with regular knowledge sharing sessions and pair programming to leverage our collective strengths and rapidly build expertise in satellite security systems.')}>Learn More</button>
               </li>
             </motion.ul>
           </div>

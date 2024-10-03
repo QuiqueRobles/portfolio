@@ -9,6 +9,7 @@ import Loader from './components/Loader';
 import Footer from './components/Footer';
 import SatelliteProject from './components/SatelliteProject'
 import GMVProject from "./components/GMVProject"
+import WebSitesProject from './components/WebSitesProject';
 
 
 import './App.css';
@@ -67,6 +68,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/satellite-project" element={<SatelliteProject />} />
             <Route path="/gmv-project" element={<GMVProject />} />
+            <Route path="/websites-project" element={<WebSitesProject />} />
           </Routes>
         </main>
         <Footer/>

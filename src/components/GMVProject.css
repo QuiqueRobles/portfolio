@@ -1,51 +1,26 @@
+/* GMVProject.css */
+:root {
+    --color-primary: #27CC0C;
+    --color-background: #0b0d17;
+    --color-text: #ffffff;
+    --color-text-muted: #a0a0a0;
+    --color-accent: #1a1f35;
+    --transition-speed: 0.3s;
+}
+
 .gmv-project {
     font-family: 'Arial', sans-serif;
-    color: #ffffff;
-    background-color: #0b0d17;
+    color: var(--color-text);
+    background-color: var(--color-background);
     min-height: 100vh;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 .gmv-project__container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.gmv-project__header {
-    background-color: #000000;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.gmv-project__header .gmv-project__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.gmv-project__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.gmv-project__nav {
-    display: flex;
-    gap: 1rem;
-}
-
-.gmv-project__nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.gmv-project__nav-link:hover {
-    color: #27CC0C;
 }
 
 .gmv-project__scroll-progress {
@@ -60,8 +35,8 @@
 
 .gmv-project__scroll-progress-bar {
     height: 100%;
-    background-color: #27CC0C;
-    transition: width 0.3s ease-out;
+    background-color: var(--color-primary);
+    transition: width var(--transition-speed) ease-out;
 }
 
 .gmv-project__main {
@@ -70,19 +45,22 @@
 
 .gmv-project__hero {
     text-align: center;
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #1a1f35 0%, #0b0d17 100%);
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-background) 100%);
+    border-radius: 0 0 50% 50% / 20px;
 }
 
 .gmv-project__title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    color: var(--color-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .gmv-project__subtitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
-    color: #a0a0a0;
+    color: var(--color-text-muted);
 }
 
 .gmv-project__button-container {
@@ -97,78 +75,95 @@
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
-    color: #ffffff;
-    background-color: #27CC0C;
+    color: var(--color-text);
+    background-color: var(--color-primary);
     border-radius: 30px;
-    transition: all 0.3s ease;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 6px rgba(39, 204, 12, 0.2);
 }
 
 .gmv-project__button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(39, 204, 12, 0.3);
+    box-shadow: 0 6px 12px rgba(39, 204, 12, 0.3);
 }
 
 .gmv-project__button--secondary {
     background-color: transparent;
-    border: 2px solid #27CC0C;
+    border: 2px solid var(--color-primary);
 }
 
 .gmv-project__about,
 .gmv-project__technical,
 .gmv-project__challenges,
 .gmv-project__timeline {
-    padding: 4rem 0;
+    padding: 6rem 0;
+    position: relative;
 }
 
 .gmv-project__section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #27CC0C;
+    color: var(--color-primary);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.gmv-project__section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
 }
 
 .gmv-project__text {
-    margin-bottom: 1rem;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 .gmv-project__accordion {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .gmv-project__accordion-item {
     margin-bottom: 1rem;
-    border: 1px solid #27CC0C;
+    border: 1px solid var(--color-primary);
     border-radius: 8px;
     overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow var(--transition-speed) ease;
 }
 
 .gmv-project__accordion-item:hover {
-    box-shadow: 0 0 10px rgba(39, 204, 12, 0.3);
+    box-shadow: 0 0 15px rgba(39, 204, 12, 0.3);
 }
 
 .gmv-project__accordion-button {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: left;
-    background-color: transparent;
+    background-color: rgba(39, 204, 12, 0.1);
     border: none;
-    color: #ffffff;
-    font-size: 1.1rem;
+    color: var(--color-text);
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease;
 }
 
 .gmv-project__accordion-button:hover {
-    background-color: rgba(39, 204, 12, 0.1);
+    background-color: rgba(39, 204, 12, 0.2);
 }
 
 .gmv-project__accordion-icon {
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-speed) ease;
 }
 
 .gmv-project__accordion-icon.active {
@@ -178,18 +173,18 @@
 .gmv-project__accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    transition: max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease-out;
     background-color: rgba(26, 31, 53, 0.5);
 }
 
 .gmv-project__accordion-content.active {
-    max-height: 500px;
-    padding: 1rem;
+    max-height: 1000px;
+    padding: 1.5rem;
 }
 
 .gmv-project__timeline-container {
     position: relative;
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 .gmv-project__timeline-container::before {
@@ -197,85 +192,115 @@
     position: absolute;
     top: 0;
     left: 50%;
-    width: 2px;
+    width: 4px;
     height: 100%;
-    background-color: #27CC0C;
+    background-color: var(--color-primary);
     transform: translateX(-50%);
 }
 
 .gmv-project__timeline-item {
     position: relative;
-    width: 50%;
-    padding: 1rem;
-    background-color: rgba(26, 31, 53, 0.5);
+    width: calc(50% - 30px);
+    padding: 1.5rem;
+    background-color: rgba(26, 31, 53, 0.8);
     border-radius: 8px;
     margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.gmv-project__timeline-item:nth-child(odd) {
-    left: -50%;
-    text-align: right;
+.gmv-project__timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -36px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    transform: translateY(-50%);
 }
 
 .gmv-project__timeline-item:nth-child(even) {
-    left: 50%;
+    left: calc(50% + 30px);
+}
+
+.gmv-project__timeline-item:nth-child(even)::after {
+    left: -36px;
+    right: auto;
 }
 
 .gmv-project__timeline-year {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #27CC0C;
+    color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
 
 .gmv-project__challenges-list {
     list-style-type: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .gmv-project__challenges-item {
-    background-color: rgba(26, 31, 53, 0.5);
-    padding: 1.5rem;
+    background-color: rgba(26, 31, 53, 0.8);
+    padding: 2rem;
     border-radius: 8px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .gmv-project__challenges-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(39, 204, 12, 0.3);
+    box-shadow: 0 8px 15px rgba(39, 204, 12, 0.3);
 }
 
 .gmv-project__challenges-title {
-    font-size: 1.2rem;
-    color: #27CC0C;
-    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
 }
 
 .gmv-project__learn-more {
     background-color: transparent;
     border: none;
-    color: #27CC0C;
+    color: var(--color-primary);
     cursor: pointer;
     font-weight: bold;
     padding: 0;
-    margin-top: 0.5rem;
-    transition: color 0.3s ease;
+    margin-top: 1rem;
+    transition: color var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.gmv-project__learn-more::after {
+    content: '→';
+    margin-left: 5px;
+    transition: transform var(--transition-speed) ease;
 }
 
 .gmv-project__learn-more:hover {
-    color: #ffffff;
+    color: var(--color-text);
+}
+
+.gmv-project__learn-more:hover::after {
+    transform: translateX(5px);
 }
 
 .gmv-project__footer {
-    background-color: #000000;
+    background-color: var(--color-accent);
     text-align: center;
-    padding: 4rem 0;
+    padding: 6rem 0;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
 }
 
 .gmv-project__footer-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
+    color: var(--color-primary);
 }
 
 .gmv-project__modal-overlay {
@@ -284,31 +309,58 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .gmv-project__modal-content {
-    background-color: #1a1f35;
-    padding: 2rem;
-    border-radius: 8px;
+    background-color: var(--color-accent);
+    padding: 3rem;
+    border-radius: 12px;
     max-width: 600px;
     width: 90%;
     position: relative;
+    box-shadow: 0 10px 25px rgba(39, 204, 12, 0.2);
 }
 
 .gmv-project__modal-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #ffffff;
+    color: var(--color-text);
     cursor: pointer;
+    transition: color var(--transition-speed) ease;
+}
+
+.gmv-project__modal-close:hover {
+    color: var(--color-primary);
+}
+
+.gmv-project__esa-osnma {
+    background-color: rgba(26, 31, 53, 0.8);
+    border-radius: 12px;
+    padding: 3rem;
+    margin-top: 3rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gmv-project__esa-osnma-title {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.gmv-project__esa-osnma-text {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
@@ -316,6 +368,42 @@
         flex-direction: column;
     }
 
+    .gmv-project__title {
+        font-size: 2.5rem;
+    }
+
+    .gmv-project__subtitle {
+        font-size: 1.2rem;
+    }
+
+    .gmv-project__section-title {
+        font-size: 2rem;
+    }
+
+    .gmv-project__accordion-button {
+        font-size: 1.1rem;
+    }
+
+    .gmv-project__timeline-container::before {
+        left: 0;
+    }
+
+    .gmv-project__timeline-item {
+        width: calc(100% - 30px);
+        left: 30px;
+    }
+
+    .gmv-project__timeline-item::after {
+        left: -38px;
+        right: auto;
+    }
+
+    .gmv-project__timeline-item:nth-child(even) {
+        left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
     .gmv-project__title {
         font-size: 2rem;
     }
@@ -328,45 +416,16 @@
         font-size: 1.5rem;
     }
 
-    .gmv-project__accordion-button {
-        font-size: 1rem;
+    .gmv-project__button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 
-    .gmv-project__timeline-item {
-        width: 100%;
-        left: 0 !important;
-        text-align: left !important;
-    }
-
-    .gmv-project__timeline-container::before {
-        left: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .gmv-project__header .gmv-project__container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .gmv-project__nav {
-        margin-top: 1rem;
-    }
-
-    .gmv-project__title {
+    .gmv-project__esa-osnma-title {
         font-size: 1.5rem;
     }
 
-    .gmv-project__subtitle {
-        font-size: 0.9rem;
-    }
-
-    .gmv-project__section-title {
-        font-size: 1.2rem;
-    }
-
-    .gmv-project__button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+    .gmv-project__challenges-list {
+        grid-template-columns: 1fr;
     }
 }

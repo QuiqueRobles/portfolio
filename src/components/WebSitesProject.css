@@ -1,0 +1,298 @@
+:root {
+    --er-color-primary: #ffffff;
+    --er-color-background: #0b0d17;
+    --er-color-text: #ffffff;
+    --er-color-text-muted: #a0a0a0;
+    --er-color-accent: #1a1f35;
+    --er-color-button: #4a00e0;
+    --er-color-button-hover: #5c16f4;
+    --er-transition-speed: 0.3s;
+}
+
+.er-web-sites-project {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--er-color-background) 0%, var(--er-color-accent) 100%);
+    color: var(--er-color-text);
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+.er-hero {
+    text-align: center;
+    padding: 6rem 0;
+    background: linear-gradient(45deg, #000000, #1a237e, #4a148c, #311b92);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.er-title {
+    font-size: 3.5rem;
+    color: var(--er-color-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.er-subtitle {
+    font-size: 1.4rem;
+    color: var(--er-color-text-muted);
+    margin-bottom: 2rem;
+}
+
+.er-hero-icon {
+    color: var(--er-color-primary);
+    opacity: 0.8;
+}
+
+.er-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.er-project-card {
+    background: rgba(26, 31, 53, 0.8);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: transform var(--er-transition-speed) ease, box-shadow var(--er-transition-speed) ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.er-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(74, 0, 224, 0.3);
+}
+
+.er-project-image-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.er-project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.er-project-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--er-color-primary);
+    background: rgba(26, 31, 53, 0.8);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.er-project-name {
+    font-size: 1.5rem;
+    color: var(--er-color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.er-project-description {
+    font-size: 1rem;
+    color: var(--er-color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.er-project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.er-technology-tag {
+    background: rgba(74, 0, 224, 0.2);
+    color: var(--er-color-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    transition: background-color var(--er-transition-speed) ease;
+}
+
+.er-technology-tag:hover {
+    background: rgba(74, 0, 224, 0.3);
+}
+
+.er-project-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--er-color-button);
+    color: var(--er-color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    transition: background-color var(--er-transition-speed) ease;
+}
+
+.er-project-link:hover {
+    background-color: var(--er-color-button-hover);
+}
+
+.er-inline-icon {
+    margin-left: 0.5rem;
+    transition: transform var(--er-transition-speed) ease;
+}
+
+.er-project-link:hover .er-inline-icon {
+    transform: translateX(5px);
+}
+
+.er-project-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 13, 23, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.er-project-modal {
+    background: var(--er-color-accent);
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(74, 0, 224, 0.3);
+}
+
+.er-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--er-color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color var(--er-transition-speed) ease;
+}
+
+.er-modal-close:hover {
+    color: var(--er-color-primary);
+}
+
+.er-modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.er-modal-title {
+    font-size: 2rem;
+    color: var(--er-color-primary);
+    margin-bottom: 1rem;
+}
+
+.er-modal-description {
+    font-size: 1rem;
+    color: var(--er-color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.er-modal-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.er-modal-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--er-color-button);
+    color: var(--er-color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    transition: background-color var(--er-transition-speed) ease;
+}
+
+.er-modal-link:hover {
+    background-color: var(--er-color-button-hover);
+}
+
+@media (max-width: 768px) {
+    .er-hero {
+        padding: 4rem 0;
+    }
+
+    .er-title {
+        font-size: 2.5rem;
+    }
+
+    .er-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .er-projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .er-web-sites-project {
+        padding: 1rem;
+    }
+
+    .er-hero {
+        padding: 3rem 0;
+    }
+
+    .er-title {
+        font-size: 2rem;
+    }
+
+    .er-subtitle {
+        font-size: 1rem;
+    }
+
+    .er-project-card {
+        padding: 1rem;
+    }
+
+    .er-project-name {
+        font-size: 1.2rem;
+    }
+
+    .er-project-description {
+        font-size: 0.9rem;
+    }
+
+    .er-technology-tag {
+        font-size: 0.7rem;
+    }
+}
