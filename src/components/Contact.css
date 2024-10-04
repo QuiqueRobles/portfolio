@@ -10,7 +10,6 @@
     margin-bottom: 20px;
 }
 
-/* Ajustes para hacer el contenedor más responsivo */
 .contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -40,46 +39,110 @@
     resize: vertical;
 }
 
-.contact button {
+.submit-button {
+    position: relative;
     padding: 15px 30px;
     background-color: #3b3a5a;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-.contact button:hover {
+.submit-button:hover:not(:disabled) {
     background-color: #565482;
 }
 
-/* Media Query para pantallas pequeñas (móviles) */
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.submit-button .button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.submit-button .button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.submit-button.submitting .button-icon {
+    opacity: 1;
+    animation: spin 1s linear infinite;
+}
+
+.submit-button.submitting .button-text {
+    opacity: 0;
+}
+
+.submit-button.success {
+    background-color: #4CAF50;
+}
+
+.submit-button.error {
+    background-color: #f44336;
+}
+
+.status-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-message.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.status-message.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 @media (max-width: 768px) {
     .contact h2 {
         font-size: 2rem;
-        /* Ajuste del tamaño del título */
     }
 
     .contact input,
     .contact textarea {
         padding: 12px;
-        /* Ajustar padding en móviles */
         font-size: 0.9rem;
     }
 
-    .contact button {
+    .submit-button {
         padding: 12px 25px;
-        /* Botón más pequeño en móviles */
     }
 
     .contact {
         padding: 40px 15px;
-        /* Reducir padding en móviles */
     }
 }
 
-/* Media Query para pantallas muy pequeñas (teléfonos pequeños) */
 @media (max-width: 480px) {
     .contact h2 {
         font-size: 1.75rem;
@@ -88,11 +151,10 @@
     .contact input,
     .contact textarea {
         font-size: 0.85rem;
-        /* Tamaño de texto más pequeño */
         padding: 10px;
     }
 
-    .contact button {
+    .submit-button {
         padding: 10px 20px;
         font-size: 0.9rem;
     }

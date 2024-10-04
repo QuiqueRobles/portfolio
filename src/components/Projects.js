@@ -24,19 +24,6 @@ function Projects() {
 
         <div className="project-card">
           <div className="project-icon">
-            <FaLock />
-          </div>
-          <h3>Cryptographic Module for GMV</h3>
-          <p>
-            During my internship at GMV, I participated in the development of a cryptographic module for ESA's Galileo project, implementing post-quantum cryptography algorithms. The module ensures the integrity and confidentiality of communications on European satellites.
-          </p>
-          <Link to="/gmv-project">
-          <button >View Project</button>
-          </Link>
-        </div>
-
-        <div className="project-card">
-          <div className="project-icon">
             <FaCode />
           </div>
           <h3>Full-stack Developer in several projects and technologies</h3>
@@ -47,7 +34,18 @@ function Projects() {
           <button >Ver Proyecto</button>
           </Link>
         </div>
-        
+        <div className="project-card">
+          <div className="project-icon">
+            <FaLock />
+          </div>
+          <h3>Cryptographic Module for GMV</h3>
+          <p>
+            During my internship at GMV, I participated in the development of a cryptographic module for ESA's Galileo project, implementing post-quantum cryptography algorithms. The module ensures the integrity and confidentiality of communications on European satellites.
+          </p>
+          <Link to="/gmv-project">
+          <button >View Project</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
