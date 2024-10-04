@@ -38,6 +38,7 @@ function Contact() {
   return (
     <div className="contact">
       <h2>Contact me</h2>
+      I insist you to give me feedback and contact me! I always answer!<br></br><br></br>
       <form ref={form} onSubmit={sendEmail}>
         <input type="text" name="user_name" placeholder="Your Name" required />
         <input type="email" name="from_name" placeholder="Your Email" required />

@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import Likes from './Likes.js';
 
 function Footer() {
   const scrollToTop = () => {
@@ -10,6 +10,7 @@ function Footer() {
   };
   return (
     <footer className="footer-container">
+      
       <div className="footer-wave">
         <svg viewBox="0 0 120 28" preserveAspectRatio="none">
           <defs>
@@ -64,7 +65,7 @@ function Footer() {
       </div>
       <div className="footer-content">
         <div className="footer-about">
-          <h3>About Me</h3>
+          <h3>Extra Info</h3>
           <p>Passionate about technology and engineering, I thrive in environments where innovation meets impact.</p>
         </div>
         <div className="footer-links">
@@ -75,7 +76,7 @@ function Footer() {
             <li><Link to="/resume" onClick={scrollToTop}>Resume</Link></li>
           </ul>
         </div>
-
+        <Likes/>
         <div className="footer-social">
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/enrique-robles-uriel/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
@@ -89,6 +90,7 @@ function Footer() {
         <p>© 2024 Enrique Robles. All rights reserved.</p>
       </div>
       <a href="#top" className="scroll-to-top">⬆</a>
+      
     </footer>
   );
 }
