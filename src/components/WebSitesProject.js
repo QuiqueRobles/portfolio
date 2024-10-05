@@ -7,7 +7,7 @@ import './WebSitesProject.css'
 
 const webProjects = [
   {
-    name: "GREMA",
+    name: "GREMA (under maintenance)",
     description: "Flask application developed in Python and using Bootstrap for the Greek Association of Madrid. Currently in the phase of selling to the association.",
     technologies: ["Flask", "Python", "Bootstrap"],
     url: "https://grema.org",
