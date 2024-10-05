@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Likes from './Likes.js';
+
 
 function Footer() {
   const scrollToTop = () => {
@@ -76,7 +76,6 @@ function Footer() {
             <li><Link to="/resume" onClick={scrollToTop}>Resume</Link></li>
           </ul>
         </div>
-        <Likes/>
         <div className="footer-social">
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/enrique-robles-uriel/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
