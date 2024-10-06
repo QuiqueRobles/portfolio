@@ -105,6 +105,10 @@
     color: #28cc0e;
 }
 
+.logo_footer{
+    width: 10%;
+}
+
 @media screen and (max-width: 768px) {
     .footer-links ul {
         flex-direction: column;

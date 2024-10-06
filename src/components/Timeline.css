@@ -6,7 +6,7 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 40px 20px;
-  max-width: 1200px;
+  size: fixed;
 }
 
 /* Timeline Title */
@@ -135,6 +135,7 @@
   .timeline-icon {
     margin-right: 0;
     margin-bottom: 10px;
+    background-color: #1d3526;
   }
 
   .timeline-content {

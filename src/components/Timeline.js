@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
+import { FaSatelliteDish } from 'react-icons/fa';
 import 'aos/dist/aos.css';
 import './Timeline.css';
 
@@ -12,7 +13,7 @@ const Timeline = () => {
     {
       year: "2024-2026",
       title: "Telecommunications Engineering Master of Science",
-      description: "Pursuing a Master's degree focused on advanced telecommunications systems and digital communications at Politecnico di Milano.",
+      description: "Pursuing a Master's degree focused on signal processing, telecommunications systems and space communications at Politecnico di Milano.",
       icon: "🎓",
     },
     {
@@ -30,13 +31,13 @@ const Timeline = () => {
     {
       year: "2019-2023",
       title: "Telecommunications Engineering",
-      description: "Graduated with a Bachelor's in Telecommunications Engineering at Universidad CEU San Pablo, specializing in wireless communications and networks.",
-      icon: "🎓",
+      description: "Top graduated with a Bachelor's in Telecommunications Engineering at Universidad CEU San Pablo, specializing in telecommunications systems.",
+      icon: <FaSatelliteDish/>,
     },
     {
       year: "2019-2024",
       title: "Computer Science Engineering",
-      description: "Pursuing a dual degree in Computer Science Engineering, focusing on software development, artificial intelligence, and data structures.",
+      description: "Graduated with a Bachelor's in Computer Science Engineering, doing a one-year stay abroad at Politecnico di Milano.",
       icon: "💻",
     },
   ];

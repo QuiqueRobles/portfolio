@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
-
+import robles_logo from '../images/robles_logo.png';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          QRU <i className="fas fa-satellite-dish"></i>
+          QRU <img src={robles_logo} className="logo"/>
         </Link>
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <li className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`}>

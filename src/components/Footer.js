@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaDiscord, FaInstagram } from 'react-icons/fa';
+import robles_logo from "../images/robles_logo.png"
 import { Link } from 'react-router-dom';
 
 
@@ -80,12 +81,14 @@ function Footer() {
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/enrique-robles-uriel/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
             <a href="https://github.com/QuiqueRobles" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+            <a href="https://discord.gg/GDdNEfY5" target="_blank" rel="noopener noreferrer"><FaDiscord /></a>
             <a href="https://www.instagram.com/quique_robles/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           </div>
         </div>
       </div>
+      
       <div className="footer-bottom">
+        <img src={robles_logo} className="logo_footer"></img>
         <p>© 2024 Enrique Robles. All rights reserved.</p>
       </div>
       <a href="#top" className="scroll-to-top">⬆</a>
