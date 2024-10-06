@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaFilePdf } from 'react-icons/fa';
 import './SatelliteProject.css';
 
 export default function SatelliteProject() {
@@ -25,7 +26,8 @@ export default function SatelliteProject() {
   const antenaFabricada = require('../images/antena_fabricada.png');
   const msalluvia = require('../images/MSAlluvia.jpg');
   const antenna_schematic = require('../images/antenna_schematic.png');
-
+  const projectPDF = require('../assets/tfg_pdf.pdf');
+  const pdfPreview = require('../images/pdf_review.png');
   return (  
     <div className="satellite-project">
       <div className="satellite-project__scroll-progress">
@@ -69,6 +71,8 @@ export default function SatelliteProject() {
             </div>
           </div>
         </section>
+
+        
 
         <section className="satellite-project__technical">
           <div className="satellite-project__container satellite-project__technical-content">
@@ -195,15 +199,30 @@ export default function SatelliteProject() {
         </section>
       </main>
 
-      <footer className="satellite-project__footer">
+      <section className="satellite-project__download">
         <div className="satellite-project__container">
-          <h3 className="satellite-project__footer-title">Interested in satellite communication or building your own weather station?</h3>
-          <div className="satellite-project__button-container">
-            <a href="/projects" className="satellite-project__button">Explore More Projects</a>
-            <a href="/contact" className="satellite-project__button">Contact Us</a>
+          <h2 className="satellite-project__section-title">My Final Project </h2>
+          <div className="satellite-project__download-content">
+            <div className="satellite-project__pdf-preview">
+              <img src={pdfPreview} alt="PDF Preview" className="satellite-project__pdf-image" />
+            </div>
+            <div className="satellite-project__download-info">
+              <p className="satellite-project__text">
+                Download the complete project to learn more about our satellite communication project.<p></p> This work was evaluated with honors at Universidad San Pablo CEU.
+              </p>
+              <a 
+                href={projectPDF} 
+                download="FinalThesisEnriqueRoblesTelecommunications.pdf"
+                className="satellite-project__button satellite-project__button--download"
+              >
+                <FaFilePdf className="satellite-project__button-icon" />
+                Download PDF
+              </a>
+              <p className="satellite-project__file-info">PDF • 5.2 MB</p>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }

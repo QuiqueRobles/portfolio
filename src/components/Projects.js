@@ -31,7 +31,7 @@ function Projects() {
             I have developed web pages and web applications, working for the Greek Association of Madrid GREMA (grema.org) and for Estudios Juridicos PRL (estudiojuridicoprl.es). I have also participated in several university web development projects.
           </p>
           <Link to="/websites-project">
-          <button >Ver Proyecto</button>
+          <button >View Project</button>
           </Link>
         </div>
         <div className="project-card">
