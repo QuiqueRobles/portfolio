@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <!-- Home Page -->
+   <url>
+      <loc>https://enriquerobles.es/</loc>
+      <lastmod>2024-10-08</lastmod>
+      <priority>1.0</priority>
+   </url>
+
+   <!-- About Page -->
+   <url>
+      <loc>https://enriquerobles.es/about</loc>
+      <lastmod>2024-10-08</lastmod>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- Projects Overview -->
+   <url>
+      <loc>https://enriquerobles.es/projects</loc>
+      <lastmod>2024-10-08</lastmod>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- Contact Page -->
+   <url>
+      <loc>https://enriquerobles.es/contact</loc>
+      <lastmod>2024-10-08</lastmod>
+      <priority>0.6</priority>
+   </url>
+
+   <!-- Satellite Project -->
+   <url>
+      <loc>https://enriquerobles.es/satellite-project</loc>
+      <lastmod>2024-10-08</lastmod>
+      <priority>0.7</priority>
+   </url>
+
+   <!-- GMV Project -->
+   <url>
+      <loc>https://enriquerobles.es/gmv-project</loc>
+      <lastmod>2024-10-08</lastmod>
+      <priority>0.7</priority>
+   </url>
+
+   <!-- Websites Project -->
+   <url>
+      <loc>https://enriquerobles.es/websites-project</loc>
+      <lastmod>2024-10-08</lastmod>
+      <priority>0.7</priority>
+   </url>
+
+</urlset>
