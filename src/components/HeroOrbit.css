@@ -164,20 +164,21 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .orbit-container {
-        transform: scale(0.6);
+        transform: scale(0.9);
     }
 }
 
 @media (max-width: 480px) {
     .orbit-container {
-        transform: scale(0.4);
+        transform: scale(0.9);
     }
 }
 
 @media (max-height: 600px) {
     .orbit-container {
-        transform: scale(0.5);
+        transform: scale(0.8);
     }
+    
 }
 
 /* Ensure the container takes full viewport height on mobile */
