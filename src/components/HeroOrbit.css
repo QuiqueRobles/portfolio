@@ -157,37 +157,9 @@
     }
 }
 
-.orbit-container::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(1px 1px at 10% 10%, white 100%, transparent 100%),
-        radial-gradient(1px 1px at 20% 20%, white 100%, transparent 100%),
-        radial-gradient(2px 2px at 30% 30%, white 100%, transparent 100%),
-        radial-gradient(1px 1px at 40% 40%, white 100%, transparent 100%),
-        radial-gradient(2px 2px at 50% 50%, white 100%, transparent 100%),
-        radial-gradient(1px 1px at 60% 60%, white 100%, transparent 100%),
-        radial-gradient(2px 2px at 70% 70%, white 100%, transparent 100%),
-        radial-gradient(1px 1px at 80% 80%, white 100%, transparent 100%),
-        radial-gradient(2px 2px at 90% 90%, white 100%, transparent 100%);
-    background-size: 100% 100%;
-    animation: twinkle 5s infinite;
-    opacity: 0.3;
-}
 
-@keyframes twinkle {
 
-    0%,
-    100% {
-        opacity: 0.3;
-    }
 
-    50% {
-        opacity: 0.6;
-    }
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
