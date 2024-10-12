@@ -171,12 +171,15 @@
 @media (max-width: 480px) {
     .orbit-container {
         transform: scale(0.9);
+        margin-bottom: 1.2rem;
     }
+    
 }
 
 @media (max-height: 600px) {
     .orbit-container {
         transform: scale(0.8);
+        margin-bottom: 1.2rem;
     }
     
 }
