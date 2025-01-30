@@ -9,7 +9,7 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 const languages = [
   { name: 'Spanish', level: 'Native', proficiency: 100, flagClass: 'fi fi-es' },
   { name: 'English', level: 'Advanced', proficiency: 90, flagClass: 'fi fi-gb' },
-  { name: 'Italian', level: 'Intermediate', proficiency: 70, flagClass: 'fi fi-it' },
+  { name: 'Italian', level: 'Advanced ', proficiency: 90, flagClass: 'fi fi-it' },
   { name: 'French', level: 'Basic', proficiency: 40, flagClass: 'fi fi-fr' },
 ];
 
