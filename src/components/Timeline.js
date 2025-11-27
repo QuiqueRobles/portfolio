@@ -4,9 +4,19 @@ import 'aos/dist/aos.css';
 
 const Timeline = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
+    
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const events = [
@@ -88,12 +98,15 @@ const Timeline = () => {
   ];
 
   return (
-    <div style={styles.container}>
+    <div style={styles.timelineWrapper}>
+      <style>{keyframesCSS}</style>
+      
       {/* Animated background particles */}
       <div style={styles.particles}>
-        {[...Array(20)].map((_, i) => (
+        {[...Array(isMobile ? 10 : 20)].map((_, i) => (
           <div
             key={i}
+            className="timeline-particle"
             style={{
               ...styles.particle,
               left: `${Math.random() * 100}%`,
@@ -129,39 +142,43 @@ const Timeline = () => {
       </div>
       
       <div style={styles.timeline}>
-        <div style={styles.timelineLineContainer}>
-          <div style={styles.timelineLine}></div>
-          <div style={styles.timelineGlow}></div>
-        </div>
+        {!isMobile && (
+          <div style={styles.timelineLineContainer}>
+            <div style={styles.timelineLine}></div>
+            <div style={styles.timelineGlow}></div>
+          </div>
+        )}
         
         {events.map((event, index) => (
           <div
             key={index}
-            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            data-aos={isMobile ? "fade-up" : (index % 2 === 0 ? "fade-right" : "fade-left")}
             data-aos-delay={index * 50}
             style={{
               ...styles.timelineItem,
-              flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
+              flexDirection: isMobile ? 'column' : (index % 2 === 0 ? 'row' : 'row-reverse'),
             }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div style={styles.timelineItemSide}>
-              {event.highlight && (
-                <div style={styles.highlightBadge}>
-                  <span>⭐ ESA Selection</span>
-                </div>
-              )}
-              {event.award && (
-                <div style={styles.awardBadge}>
-                  <span>🏆 Award</span>
-                </div>
-              )}
-            </div>
+            {!isMobile && (
+              <div style={styles.timelineItemSide}>
+                {event.highlight && (
+                  <div style={styles.highlightBadge}>
+                    <span>⭐ ESA Selection</span>
+                  </div>
+                )}
+                {event.award && (
+                  <div style={styles.awardBadge}>
+                    <span>🏆 Award</span>
+                  </div>
+                )}
+              </div>
+            )}
 
             <div style={{
               ...styles.timelineIconWrapper,
-              transform: hoveredIndex === index ? 'scale(1.2) rotate(360deg)' : 'scale(1) rotate(0deg)',
+              transform: hoveredIndex === index && !isMobile ? 'scale(1.2) rotate(360deg)' : 'scale(1) rotate(0deg)',
             }}>
               <div style={{
                 ...styles.timelineIconRing,
@@ -184,12 +201,27 @@ const Timeline = () => {
             
             <div style={{
               ...styles.timelineContent,
-              transform: hoveredIndex === index ? 'translateY(-10px)' : 'translateY(0)',
+              transform: hoveredIndex === index && !isMobile ? 'translateY(-10px)' : 'translateY(0)',
               boxShadow: hoveredIndex === index 
                 ? '0 20px 60px rgba(0, 255, 102, 0.3), inset 0 0 0 2px #00FF66' 
                 : '0 10px 40px rgba(0, 0, 0, 0.5)',
             }}>
               <div style={styles.contentGlow}></div>
+              
+              {isMobile && (event.highlight || event.award) && (
+                <div style={styles.mobileBadges}>
+                  {event.highlight && (
+                    <div style={{...styles.highlightBadge, marginBottom: '10px'}}>
+                      <span>⭐ ESA Selection</span>
+                    </div>
+                  )}
+                  {event.award && (
+                    <div style={{...styles.awardBadge, marginBottom: '10px'}}>
+                      <span>🏆 Award</span>
+                    </div>
+                  )}
+                </div>
+              )}
               
               <div style={styles.yearContainer}>
                 <div style={styles.yearBadge}>
@@ -202,7 +234,7 @@ const Timeline = () => {
 
               <h3 style={styles.eventTitle}>
                 {event.title}
-                {event.category === 'space' && <span style={styles.pulse}>●</span>}
+                {event.category === 'space' && <span className="timeline-pulse">●</span>}
               </h3>
               
               {event.institution && (
@@ -240,8 +272,65 @@ const Timeline = () => {
   );
 };
 
+const keyframesCSS = `
+  @keyframes timeline-shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  @keyframes timeline-pulse {
+    0%, 100% { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+    50% { 
+      opacity: 0.8; 
+      transform: scale(1.05); 
+    }
+  }
+
+  @keyframes timeline-rotate {
+    from { 
+      transform: translate(-50%, -50%) rotate(0deg); 
+    }
+    to { 
+      transform: translate(-50%, -50%) rotate(360deg); 
+    }
+  }
+
+  @keyframes timeline-float {
+    0%, 100% { 
+      transform: translateY(0) translateX(0); 
+      opacity: 0.3;
+    }
+    25% { 
+      transform: translateY(-20px) translateX(10px); 
+      opacity: 0.6;
+    }
+    50% { 
+      transform: translateY(-10px) translateX(-10px); 
+      opacity: 0.4;
+    }
+    75% { 
+      transform: translateY(-30px) translateX(5px); 
+      opacity: 0.5;
+    }
+  }
+
+  .timeline-particle {
+    animation: timeline-float 15s infinite ease-in-out;
+  }
+
+  .timeline-pulse {
+    display: inline-block;
+    animation: timeline-pulse 2s ease-in-out infinite;
+    color: #00FF66;
+    margin-left: 10px;
+  }
+`;
+
 const styles = {
-  container: {
+  timelineWrapper: {
     minHeight: '100vh',
     background: 'rgb(14, 11, 22)',
     padding: '60px 20px',
@@ -256,6 +345,7 @@ const styles = {
     top: 0,
     left: 0,
     pointerEvents: 'none',
+    zIndex: 0,
   },
   particle: {
     position: 'absolute',
@@ -263,7 +353,6 @@ const styles = {
     height: '3px',
     background: '#00FF66',
     borderRadius: '50%',
-    animation: 'float 15s infinite ease-in-out',
     opacity: 0.3,
   },
   header: {
@@ -281,23 +370,23 @@ const styles = {
     height: '200px',
     background: 'radial-gradient(circle, #00FF6640, transparent)',
     filter: 'blur(60px)',
-    animation: 'pulse 4s ease-in-out infinite',
+    animation: 'timeline-pulse 4s ease-in-out infinite',
+    zIndex: -1,
   },
   title: {
     margin: 0,
     position: 'relative',
   },
   titleGradient: {
-    fontSize: '56px',
+    fontSize: 'clamp(32px, 8vw, 56px)',
     fontWeight: '900',
     background: 'linear-gradient(90deg, #00FF66, #00CC52, #00FF66)',
     backgroundSize: '200% auto',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-    animation: 'shimmer 3s linear infinite',
+    animation: 'timeline-shimmer 3s linear infinite',
     letterSpacing: '2px',
-    textShadow: '0 0 40px #00FF6660',
   },
   titleUnderline: {
     width: '150px',
@@ -307,31 +396,33 @@ const styles = {
     borderRadius: '2px',
   },
   subtitle: {
-    fontSize: '18px',
+    fontSize: 'clamp(14px, 3vw, 18px)',
     color: '#00FF66',
     margin: '10px 0 40px 0',
     fontWeight: '400',
     letterSpacing: '1px',
     textTransform: 'uppercase',
+    padding: '0 20px',
   },
   stats: {
     display: 'flex',
     justifyContent: 'center',
-    gap: '60px',
+    gap: 'clamp(30px, 8vw, 60px)',
     marginTop: '40px',
     flexWrap: 'wrap',
+    padding: '0 20px',
   },
   stat: {
     textAlign: 'center',
   },
   statNumber: {
-    fontSize: '48px',
+    fontSize: 'clamp(36px, 8vw, 48px)',
     fontWeight: '900',
     color: '#00FF66',
     textShadow: '0 0 20px #00FF66',
   },
   statLabel: {
-    fontSize: '14px',
+    fontSize: 'clamp(12px, 2.5vw, 14px)',
     color: '#a8a8a8',
     textTransform: 'uppercase',
     letterSpacing: '1px',
@@ -368,34 +459,45 @@ const styles = {
   timelineItem: {
     display: 'flex',
     alignItems: 'center',
-    marginBottom: '80px',
+    marginBottom: 'clamp(40px, 10vw, 80px)',
     position: 'relative',
     zIndex: 2,
-    gap: '30px',
+    gap: 'clamp(15px, 4vw, 30px)',
   },
   timelineItemSide: {
     width: '120px',
     display: 'flex',
     justifyContent: 'center',
+    flexShrink: 0,
+  },
+  mobileBadges: {
+    marginBottom: '15px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
   },
   highlightBadge: {
     background: 'linear-gradient(135deg, #00FF66, #00CC52)',
     padding: '8px 16px',
     borderRadius: '20px',
-    fontSize: '12px',
+    fontSize: 'clamp(11px, 2.5vw, 12px)',
     fontWeight: '700',
     color: '#000',
     boxShadow: '0 0 20px #00FF66',
-    animation: 'pulse 2s ease-in-out infinite',
+    animation: 'timeline-pulse 2s ease-in-out infinite',
+    display: 'inline-block',
+    whiteSpace: 'nowrap',
   },
   awardBadge: {
     background: 'linear-gradient(135deg, #FFD700, #FFA500)',
     padding: '8px 16px',
     borderRadius: '20px',
-    fontSize: '12px',
+    fontSize: 'clamp(11px, 2.5vw, 12px)',
     fontWeight: '700',
     color: '#000',
     boxShadow: '0 0 20px #FFD700',
+    display: 'inline-block',
+    whiteSpace: 'nowrap',
   },
   timelineIconWrapper: {
     position: 'relative',
@@ -404,19 +506,19 @@ const styles = {
   },
   timelineIconRing: {
     position: 'absolute',
-    width: '100px',
-    height: '100px',
+    width: 'clamp(80px, 15vw, 100px)',
+    height: 'clamp(80px, 15vw, 100px)',
     borderRadius: '50%',
     border: '3px solid #00FF66',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    animation: 'rotate 10s linear infinite',
+    animation: 'timeline-rotate 10s linear infinite',
     opacity: 0.5,
   },
   timelineIcon: {
-    width: '80px',
-    height: '80px',
+    width: 'clamp(60px, 12vw, 80px)',
+    height: 'clamp(60px, 12vw, 80px)',
     borderRadius: '50%',
     display: 'flex',
     alignItems: 'center',
@@ -428,18 +530,19 @@ const styles = {
     transition: 'all 0.4s ease',
   },
   icon: {
-    fontSize: '36px',
+    fontSize: 'clamp(28px, 6vw, 36px)',
     filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.5))',
   },
   timelineContent: {
     background: 'linear-gradient(135deg, #141924 0%, #1a1f2e 100%)',
-    padding: '35px',
+    padding: 'clamp(20px, 5vw, 35px)',
     borderRadius: '20px',
     flex: '1',
     position: 'relative',
     border: '2px solid #1f2937',
     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     overflow: 'hidden',
+    width: '100%',
   },
   contentGlow: {
     position: 'absolute',
@@ -459,14 +562,14 @@ const styles = {
   },
   yearBadge: {
     display: 'inline-block',
-    padding: '8px 20px',
+    padding: 'clamp(6px, 2vw, 8px) clamp(14px, 4vw, 20px)',
     borderRadius: '25px',
     background: 'linear-gradient(135deg, #00FF66, #00994D)',
     border: '2px solid #00FF66',
     boxShadow: '0 0 15px #00FF6640',
   },
   yearText: {
-    fontSize: '16px',
+    fontSize: 'clamp(14px, 3vw, 16px)',
     fontWeight: '800',
     color: '#000',
     letterSpacing: '1px',
@@ -476,38 +579,35 @@ const styles = {
     borderRadius: '15px',
     backgroundColor: '#1f2937',
     color: '#00FF66',
-    fontSize: '13px',
+    fontSize: 'clamp(11px, 2.5vw, 13px)',
     fontWeight: '600',
     border: '1px solid #374151',
   },
   eventTitle: {
-    fontSize: '26px',
+    fontSize: 'clamp(20px, 4.5vw, 26px)',
     fontWeight: '700',
     color: '#FFFFFF',
     margin: '0 0 12px 0',
     display: 'flex',
     alignItems: 'center',
     gap: '10px',
-  },
-  pulse: {
-    color: '#00FF66',
-    animation: 'pulse 2s ease-in-out infinite',
-    fontSize: '12px',
+    flexWrap: 'wrap',
   },
   institution: {
-    fontSize: '16px',
+    fontSize: 'clamp(14px, 3vw, 16px)',
     color: '#00FF66',
     margin: '0 0 15px 0',
     fontWeight: '600',
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
+    flexWrap: 'wrap',
   },
   institutionIcon: {
     fontSize: '14px',
   },
   description: {
-    fontSize: '15px',
+    fontSize: 'clamp(14px, 3vw, 15px)',
     color: '#CBD5E1',
     lineHeight: '1.8',
     margin: '0 0 20px 0',
@@ -516,7 +616,7 @@ const styles = {
     display: 'inline-block',
     padding: '6px 14px',
     borderRadius: '15px',
-    fontSize: '11px',
+    fontSize: 'clamp(10px, 2vw, 11px)',
     fontWeight: '700',
     color: '#00FF66',
     letterSpacing: '1px',
@@ -526,8 +626,8 @@ const styles = {
     position: 'absolute',
     top: 0,
     right: 0,
-    width: '40px',
-    height: '40px',
+    width: 'clamp(30px, 6vw, 40px)',
+    height: 'clamp(30px, 6vw, 40px)',
     borderTop: '4px solid',
     borderRight: '4px solid',
     borderRadius: '0 20px 0 0',
@@ -539,18 +639,17 @@ const styles = {
     zIndex: 2,
   },
   footerLine: {
-    width: '200px',
+    width: 'clamp(150px, 40vw, 200px)',
     height: '2px',
     background: 'linear-gradient(90deg, transparent, #00FF66, transparent)',
     margin: '0 auto 20px',
   },
   footerText: {
     color: '#00FF66',
-    fontSize: '16px',
+    fontSize: 'clamp(14px, 3vw, 16px)',
     fontWeight: '500',
+    padding: '0 20px',
   },
 };
-
-
 
 export default Timeline;
